@@ -7,11 +7,11 @@ import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure
 
 class AndroidApplicationConventionPlugin : Plugin<Project> {
+    override fun apply(target: Project) = with(target) {
 
-    override fun apply(target: Project) {
-        target.pluginManager.apply("com.android.application")
+        pluginManager.apply("com.android.application")
 
-        target.extensions.configure<com.android.build.api.dsl.ApplicationExtension> {
+        extensions.configure<ApplicationExtension> {
 
             namespace = "com.da.androidtemplate"
             compileSdk = 36
@@ -22,10 +22,18 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
                 targetSdk = 36
                 versionCode = 1
                 versionName = "1.0"
+
+                testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
             }
 
-            buildFeatures {
-                compose = true
+            buildTypes {
+                release {
+                    isMinifyEnabled = false
+                    proguardFiles(
+                        getDefaultProguardFile("proguard-android-optimize.txt"),
+                        "proguard-rules.pro"
+                    )
+                }
             }
 
             compileOptions {
