@@ -9,7 +9,6 @@ import org.gradle.kotlin.dsl.configure
 class AndroidComposeConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) = with(target) {
 
-        // обовʼязково для Kotlin 2.x
         pluginManager.apply("org.jetbrains.kotlin.plugin.compose")
 
         pluginManager.withPlugin("com.android.application") {
