@@ -37,6 +37,12 @@ gradlePlugin {
             implementationClass =
                 "com.da.androidtemplate.buildlogic.convention.KotlinLibraryConventionPlugin"
         }
+
+        register("kotlinTest") {
+            id = "androidtemplate.kotlin.test"
+            implementationClass =
+                "com.da.androidtemplate.buildlogic.convention.KotlinTestConventionPlugin"
+        }
     }
 
 }
