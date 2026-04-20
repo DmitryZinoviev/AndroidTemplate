@@ -43,6 +43,14 @@ gradlePlugin {
             implementationClass =
                 "com.da.androidtemplate.buildlogic.convention.KotlinTestConventionPlugin"
         }
+
+        plugins {
+            register("networkConvention") {
+                id = "network.convention"
+                implementationClass =
+                    "com.da.androidtemplate.buildlogic.convention.NetworkConventionPlugin"
+            }
+        }
     }
 
 }
