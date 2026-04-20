@@ -2,7 +2,7 @@ plugins {
     id("androidtemplate.android.application")
     id("androidtemplate.android.compose")
     id("androidtemplate.kotlin.test")
-
+    id("koin.convention")
 }
 
 dependencies {
@@ -15,8 +15,11 @@ dependencies {
     implementation(libs.androidx.compose.ui.tooling.preview)
     implementation(libs.androidx.compose.material3)
 
-    //androidTestImplementation(platform(libs.androidx.compose.bom))
-    //androidTestImplementation(libs.androidx.compose.ui.test.junit4)
     debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
+
+    implementation(project(":domain"))
+    implementation(project(":data"))
+    implementation(project(":core:network"))
+
 }

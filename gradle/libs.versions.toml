@@ -18,6 +18,7 @@ okhttp = "4.12.0"
 converterMoshi = "2.12.0"
 moshiKotlin = "1.15.2"
 moshiKotlinCodegen = "1.15.2"
+koin = "3.5.6"
 
 
 [libraries]
@@ -50,6 +51,8 @@ converter-moshi = { group = "com.squareup.retrofit2", name = "converter-moshi", 
 moshi-kotlin = { group = "com.squareup.moshi", name = "moshi-kotlin", version.ref = "moshiKotlin" }
 moshi-kotlin-codegen = { group = "com.squareup.moshi", name = "moshi-kotlin-codegen", version.ref = "moshiKotlinCodegen" }
 
+koin-core = { module = "io.insert-koin:koin-core", version.ref = "koin" }
+koin-android = { module = "io.insert-koin:koin-android", version.ref = "koin" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
