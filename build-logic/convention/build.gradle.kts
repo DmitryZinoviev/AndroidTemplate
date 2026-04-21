@@ -50,12 +50,6 @@ gradlePlugin {
                 "com.da.androidtemplate.buildlogic.convention.NetworkConventionPlugin"
         }
 
-        register("koinConvention") {
-            id = "koin.convention"
-            implementationClass =
-                "com.da.androidtemplate.buildlogic.convention.KoinConventionPlugin"
-        }
-
     }
 
 }

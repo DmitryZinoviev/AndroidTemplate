@@ -1,7 +1,6 @@
 plugins {
     id("androidtemplate.android.library")
     id("androidtemplate.kotlin.test")
-    id("koin.convention")
 
 }
 
@@ -11,4 +10,6 @@ dependencies {
     implementation(libs.retrofit)
     implementation(project(":domain"))
     implementation(project(":core:network"))
+
+    implementation(libs.koin.core)
 }
