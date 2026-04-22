@@ -13,6 +13,14 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
 
         extensions.configure<LibraryExtension> {
 
+            val namespace = "com.da.androidtemplate" +
+                    project.path
+                        .replace(":", ".")
+
+            this.namespace = namespace
+
+            project.logger.lifecycle(">>> namespace = $namespace")
+
             compileSdk = 36
 
             defaultConfig {
